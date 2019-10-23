@@ -6,7 +6,26 @@ from random import randint
 if __name__ == "__main__":
     params = sys.argv[1:]
     words_list = []
-    for index in range(len(params)):
-        words_list.append(params[randint(0, len(params) - 1)])
-    for i in words_list:
-        print(i, end=" ")
+    for word in params:
+        words_list.append(word)
+    print("Reading words in order but randomized")
+    chosen = []
+    for index in range(len(words_list)):
+        pick = randint(0, len(words_list) - 1)
+        while True:
+            result = False
+            for x in chosen:
+                if x == pick:
+                    result = True
+            if result is False:
+                print(words_list[pick], end=" ")
+                chosen.append(pick)
+                break
+            else:
+                pick = randint(0, len(words_list) - 1)
+
+    # print("\nReading words in reverse")
+    # last_index = len(words_list) - 1
+    # while last_index >= 0:
+    #     print(words_list[last_index], end=" ")
+    #     last_index -= 1

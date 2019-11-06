@@ -1,29 +1,29 @@
-to i in the of been some your from was came can well two hour bound which a the when have he to you me be here well broke possible sisters continually the he that my for on a your if was outside have could before her will came evil seeing stared truly it i by the you of with friend my think not colour city do presented 
-seemed and i the of not from to young was we right as england quite will well ever could without more through like all certain arms bow submit absence immediate 
-the and sit his i they was very who only such taking raise 
-the i in to down he other with upon when an word watson couch swear tapped 
-by the and i to we it of could with go deserved scar simon extreme tax elbows 
-the to it he we a and was i in at one such say house lady having before sent charge cup group 
-of know and the to in a you keep man some with most her long been stone 
-the and it as my her to him your be miss each given suspect shining 
-the i a of in had to very my st put engagement son drove carried 
-i the in of at that world said however been copyright new fitted 
-to the of at who me i it have no london by indeed news within wooden broad shot least 
-as the was a you i there may not if once he now while after 
-to of an i a his the is this one at think friend england entered emerged you hour kitchen 
-of the with and then man over way given eight 
-a and the to in it no at had has do open excellent marriage are seven floor finding minute 
-of to was the a you i he heard cause business by anyone am open chemical 
-you the your of in a is out safe up not morning must plainly breakfast seldom 
-of for and been there i the in at over it his seemed sir hair so take bedroom ask deeply guard 
-and a the that i so to was you will might quite back like seemed wilson shortly again wedding sort 
+to i in the of been some your from was came can well two hour bound which a the when have he to you me be here well broke possible sisters continually the he that my for on a your if was outside have could before her will came evil seeing stared truly it i by the you of with friend my think not colour city do presented
+seemed and i the of not from to young was we right as england quite will well ever could without more through like all certain arms bow submit absence immediate
+the and sit his i they was very who only such taking raise
+the i in to down he other with upon when an word watson couch swear tapped
+by the and i to we it of could with go deserved scar simon extreme tax elbows
+the to it he we a and was i in at one such say house lady having before sent charge cup group
+of know and the to in a you keep man some with most her long been stone
+the and it as my her to him your be miss each given suspect shining
+the i a of in had to very my st put engagement son drove carried
+i the in of at that world said however been copyright new fitted
+to the of at who me i it have no london by indeed news within wooden broad shot least
+as the was a you i there may not if once he now while after
+to of an i a his the is this one at think friend england entered emerged you hour kitchen
+of the with and then man over way given eight
+a and the to in it no at had has do open excellent marriage are seven floor finding minute
+of to was the a you i he heard cause business by anyone am open chemical
+you the your of in a is out safe up not morning must plainly breakfast seldom
+of for and been there i the in at over it his seemed sir hair so take bedroom ask deeply guard
+and a the that i so to was you will might quite back like seemed wilson shortly again wedding sort
 
 
 
 
-i 
-i 
-o f 
+i
+i
+o f
 was
 i
 is
@@ -63,3 +63,339 @@ didnt find a word
 didnt find a word
 is
 the
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+mystery
+/////// New starting point
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+mysteryOther:mystery
+////// Second testing
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+/// Third Testing
+mystery Other:mysteryTrue
+mystery Other:mysteryFalse
+mystery Other:mysteryFalse
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryFalse
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryFalse
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryTrue
+mystery Other:mysteryFalse
+mystery Other:mysteryFalse
+mystery Other:mysteryTrue
+/// Fourth Testing
+mystery Other:mystery results: True
+mystery Other:mystery results: False
+mystery Other:mystery results: False
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: False
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: False
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: True
+mystery Other:mystery results: False
+mystery Other:mystery results: False
+mystery Other:mystery results: True
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: False<class 'str'>
+mystery Other:mystery results: True<class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+/// Fith testing
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: False <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+/// Data 6th time
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>
+mystery Other:mystery results: True <class 'str'>

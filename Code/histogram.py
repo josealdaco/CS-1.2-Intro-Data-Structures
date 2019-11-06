@@ -1,46 +1,44 @@
 import sys
 import re
 import random
+import string
+
+
+def file_append(str):
+    file = open("test_file.txt", "a+")
+    print(str)
+    file.write(str + "\n")
 
 
 def word_filter(word_list):
     """ Remove all puncuations from the list"""
-    words = word_list
+    words = word_list.copy()
     for index, word in enumerate(words):
-        string_remove = str.maketrans(".,!:?][@$ *()1234567890''#â€œXIV%-_`~^{}™  ", 43*" ")
-        new_string = word.translate(string_remove)
-        x = re.findall("mystery", new_string.strip())
-        if len(x) != 0:
-            print("This is whats inside of the new string mystery:", new_string)
-        words[index] = new_string.replace(" ", "")
+        new_string = word.translate({ord(i): '' for i in """,?!,":;@$*[.][]#()~``,â€œâ™"""})
+        new_string = new_string.replace(" ", "")  #  translate({ord(i): ' ' for i in """"""})
+        new_string = new_string.strip()
+        new_string = ''.join([x for x in new_string if x in string.printable])
+        words[index] = new_string.lower()
     return words
 
 
-def histogram_Dictionary():
+def histogram_Dictionary(word_list):
     """ Returns a Dictionary with the non duplicate word and count"""
-    file = open("corpes.txt", "r")
     words = []
     counter = 0
-    temp_count = 0
     dict_words = {}
     str = ""
-    for word in file.readlines():
+    for word in word_list:
         str += word.lower()
         for element in word.split():
             words.append(element.lower())
             counter += 1
-    file.close()
     words = word_filter(words)  # Filter out the words
     random.shuffle(words)  # Shuffle the words beforehand to save time complexity
     for word2 in words:
         word2.replace(" ", "")
         if word2 in dict_words:
-            result = re.findall("mystery", word2)
-            if(len(result) != 0):
-                temp_count += 1
-                print("Found a mystery", temp_count)
             value = dict_words.get(word2)
-            result = re.findall(word2, word2)
             value += 1
             dict_words.update({word2: value})
         else:
@@ -50,7 +48,7 @@ def histogram_Dictionary():
 
 
 def histogram_Lists():
-        """ Returns a Lists of Lists with the non duplicate word and count"""
+        """Returns a Lists of Lists with the non duplicate word and count"""
         file = open("corpes.txt", "r")
         words = []
         counter = 0
@@ -61,21 +59,28 @@ def histogram_Lists():
             for element in word.split():
                 words.append(element.lower())
                 counter += 1
-        words = word_filter(words)  # Filter out the words
-        for word2 in words:
-            list = re.findall(word2, str)
-            result = False
-            for list_word in list_words:
-                if word.lower() in list_word:
-                    result = True
-            if result is False:
-                list_words.append([word2, len(list)])
         file.close()
+        words = word_filter(words)  # Filter out the words
+        print("words filtered")
+        list_words.append([words[0], 0])
+        for word2 in words:
+            index = 0
+            for words_list in list_words:
+                if words_list[0] == word2:
+                    words_list[1] += 1
+                    break
+                elif words_list[0] != word2 and index == len(list_words) -1:
+                    list_words.append([word2, 0])
+                index += 1
         return list_words
 
 
 def unique_words(list_words):
     return len(list_words)
+
+
+def unique_words_List(list_of_lists):
+    return len(list_of_lists)
 
 
 def frequency_Dictionary(desired_word, word_list):
@@ -86,11 +91,10 @@ def frequency_Dictionary(desired_word, word_list):
 
 
 def frequency_Lists(desired_word, word_list):
-    words = word_list
+    words = word_list.copy()
     for word in words:
-        for list_word in word:
-            if list_word.lower() == desired_word.lower():
-                return desired_word + " " + str(words[word])
+        if word[0].lower() == desired_word.lower():
+            return desired_word + " " + str(word[1])
 
 
 def by_Amount(word_list, number_desired):
@@ -102,7 +106,8 @@ def by_Amount(word_list, number_desired):
     return temp_list
 
 
-def sampler_Dictionary(dict_list):
+def sampler_Dictionary_word(dict_list):
+    """     Function returns a word   """
     dict_copy = dict_list.copy()
     total_words = len(dict_copy)  # Find total
     sentence = []
@@ -126,45 +131,74 @@ def sampler_Dictionary(dict_list):
         if value >= result:
             sentence.append(word_2)
             break
-    return sentence # Just getting one word
+    return sentence  # Just getting one word
 
 
-def test_prob(dict_list, amount):
-    dict_copy = dict_list
+def sampler_Dictionary_sentence(dict_list):
+    """     Function returns a sentence    """
+    dict_copy = dict_list.copy()
+    total_words = len(dict_copy)  # Find total
+    sentence = []
+
+    # Find the max of the word list
+    max = 0
+    for word3 in dict_copy:
+        value = dict_copy.get(word3)
+        if value >= max:
+            max = value
+
+    for word in dict_copy:  # Find value and convert to percentage
+        value = dict_copy.get(word)
+        percentage = value/total_words
+        dict_copy.update({word: percentage})
+
+    for word_2 in dict_copy:
+        # 1 is hardcoded because you cannot have a number less then 1
+        result = random.uniform(0.0, 1.0)
+        value = dict_copy.get(word_2)
+        if value >= result:
+            sentence.append(word_2)
+    return sentence  # Just getting one word
+
+
+def test_prob_sentence(dict_list, amount):
     for _ in range(int(amount)):
-        #sentence = sampler_Dictionary(["one":1, "fish":, "two", "fish", "red", "fish", "blue", "fish"])
-        sentence = sampler_Dictionary(dict_list)
-        print("this is the sentence:", sentence)
+        sentence = sampler_Dictionary_sentence(dict_list)
         str = read_Sentence(sentence)
         print(str)
-        #file_append(str)
 
 
-def read_Sentence(sentence_list):
+def test_prob_single_word(dict_list, amount):
+    for _ in range(int(amount)):
+        sentence = sampler_Dictionary_word(dict_list)
+        str = read_Word(sentence)
+        print(str)
+
+
+def read_Word(sentence_list):
     str = ""
     for word in sentence_list:
         str += word
     return str
 
 
-def file_append(str):
-    file = open("test_file.txt", "a+")
-    file.write(str + "\n")
+def read_Sentence(sentence_list):
+    str = ""
+    for word in sentence_list:
+        str += word + " "
+    return str
+
 
 if __name__ == '__main__':
     params = sys.argv[1:]
-    words = histogram_Dictionary()
-    #words = histogram_Lists()
-    #print(words)
-    # words = {"About": 2, "because": 1, "Jose": 1, "Name": 1, "cat": 1, "fish": 2}
-    # print(f"This is the list of words:{words}")
-    print(unique_words(words))
-    #print(frequency_Lists(input("Type desired word:"), words))
-    # sentence = sampler_Dictionary(words)
-    test_prob(words, 100)
-    #print(by_Amount(words, input("Type desired number for words: ")))
-    while True:
-        print(frequency_Dictionary(input("Type desired word:"), words))
-        x = input("Do you wish to continue? [Y/N]").lower()
-        if x == "n":
-            break
+    test_list = [[2, 1], [0, 34]]
+    words = histogram_Lists()
+    print(unique_words_List(words))   # Fix unique words
+    print(frequency_Lists(input("Type desired word: "), words))
+    #test_prob_single_word(words, 10)
+    #test_prob_sentence(words, 5)
+    #while True:
+    #    print(frequency_Dictionary(input("Type desired word:"), words))
+    #    x = input("Do you wish to continue? [Y/N]").lower()
+    #    if x == "n":
+    #        break

@@ -1,11 +1,9 @@
 #!python
 
 from __future__ import division, print_function  # Python 2 and 3 compatibility
-<<<<<<< HEAD
 from histogram import *
-=======
 import random
->>>>>>> 94df8880d9bfe97ff0a9a52428fbcb7299a2dfdf
+
 
 
 class Listogram(list):
@@ -21,7 +19,7 @@ class Listogram(list):
         self.append([word_list[0], 0])
         self.types += 1
         if word_list is not None:
-            word_list = word_filter(word_list)
+            # word_list = word_filter(word_list)
             for word in word_list:
                 self.add_count(word)
 
@@ -46,7 +44,7 @@ class Listogram(list):
         # TODO: Retrieve word frequency count
         index = 0
         for words in self:
-            if words[0].lower() == word.lower():
+            if words[0] == word:
                 return words[1]
             index += 1
         return 0

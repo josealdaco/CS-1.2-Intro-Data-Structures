@@ -13,13 +13,14 @@ def file_append(str):
 def word_filter(word_list):
     """ Remove all puncuations from the list"""
     words = word_list.copy()
-    for index, word in enumerate(words):
-        new_string = word.translate({ord(i): '' for i in """,?!,":;@$*[.][]#()~``,â€œâ™"""})
-        new_string = new_string.replace(" ", "")  #  translate({ord(i): ' ' for i in """"""})
-        new_string = new_string.strip()
-        new_string = ''.join([x for x in new_string if x in string.printable])
-        words[index] = new_string.lower()
-    return words
+    if len(word_list) != 0:
+        for index, word in enumerate(words):
+            new_string = word.translate({ord(i): '' for i in """,?!,":;@$*[.][]#()~``,â€œâ™"""})
+            new_string = new_string.replace(" ", "")  #  translate({ord(i): ' ' for i in """"""})
+            new_string = new_string.strip()
+            new_string = ''.join([x for x in new_string if x in string.printable])
+            words[index] = new_string.lower()
+            return words
 
 
 def histogram_Dictionary(word_list):
@@ -108,30 +109,13 @@ def by_Amount(word_list, number_desired):
 
 def sampler_Dictionary_word(dict_list):
     """     Function returns a word   """
-    dict_copy = dict_list.copy()
-    total_words = len(dict_copy)  # Find total
-    sentence = []
-
-    # Find the max of the word list
-    max = 0
-    for word3 in dict_copy:
-        value = dict_copy.get(word3)
-        if value >= max:
-            max = value
-
-    for word in dict_copy:  # Find value and convert to percentage
-        value = dict_copy.get(word)
-        percentage = value/total_words
-        dict_copy.update({word: percentage})
-
-    for word_2 in dict_copy:
-        # 1 is hardcoded because you cannot have a number less then 1
-        result = random.uniform(0.0, 1.0)
-        value = dict_copy.get(word_2)
-        if value >= result:
-            sentence.append(word_2)
-            break
-    return sentence  # Just getting one word
+    new_list = dict_list.copy()
+    total = sum(new_list.values())  # Getting all values
+    result = random.randint(1, total)  # Random value from 1 to totalValues
+    for word in list:
+        if result - new_list[word] <= 0:
+            return word
+        result -= new_list[word]
 
 
 def sampler_Dictionary_sentence(dict_list):

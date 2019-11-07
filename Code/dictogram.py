@@ -1,11 +1,9 @@
 #!python
 
 from __future__ import division, print_function  # Python 2 and 3 compatibility
-<<<<<<< HEAD
 from histogram import *
-=======
->>>>>>> 94df8880d9bfe97ff0a9a52428fbcb7299a2dfdf
 import random
+from random import choice
 
 
 class Dictogram(dict):
@@ -19,7 +17,7 @@ class Dictogram(dict):
         self.tokens = 0  # Total count of all word tokens in this histogram
         # Count words in given list, if any
         if word_list is not None:
-            word_list = word_filter(word_list)
+            # word_list = word_filter(word_list)
             for word in word_list:
                 self.add_count(word)
 
@@ -40,16 +38,22 @@ class Dictogram(dict):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
         for word2 in self:
-            if word2.lower() == word.lower():
+            if word2 == word:
                 return self[word]
         return 0
 
     def sample(self):
         """Return a word from this histogram, randomly sampled by weighting
         each word's probability of being chosen by its observed frequency."""
+        total = sum(self.values())  # Getting all values
+        result = random.randint(1, total)  # Random value from 1 to totalValues
+        for word in self:
+            if result - self[word] <= 0:
+                return word
+            result -= self[word]
+
+
         # TODO: Randomly choose a word based on its frequency in this histogram
-
-
 def print_histogram(word_list):
     print()
     print('Histogram:')
@@ -68,7 +72,7 @@ def print_histogram(word_list):
 def print_histogram_samples(histogram):
     print('Histogram samples:')
     # Sample the histogram 10,000 times and count frequency of results
-    samples_list = [histogram.sample() for _ in range(10000)]
+    samples_list = [histogram.sample() for _ in range(10000)]  #change the range back to 10000
     samples_hist = Dictogram(samples_list)
     print('samples: {}'.format(samples_hist))
     print()

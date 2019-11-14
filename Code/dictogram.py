@@ -15,9 +15,9 @@ class Dictogram(dict):
         # Add properties to track useful word counts for this histogram
         self.types = 0  # Count of distinct word types in this histogram
         self.tokens = 0  # Total count of all word tokens in this histogram
+        self.copy_list = word_filter(word_list.copy())
         # Count words in given list, if any
         if word_list is not None:
-            # word_list = word_filter(word_list)
             for word in word_list:
                 self.add_count(word)
 
@@ -52,8 +52,36 @@ class Dictogram(dict):
                 return word
             result -= self[word]
 
+    def mokov_chain(self, chosen_word):
+        """ Creating a mokup of the histogram """
+        temp_dict = {}
+        for index in range(len(self.copy_list)):
+            if self.copy_list[index].lower() == chosen_word.lower() and index < len(self.copy_list)-1:
+                if self.copy_list[index + 1] not in temp_dict:
+                    temp_dict.update({self.copy_list[index + 1]: 1})
+                else:
+                    value = temp_dict.get(self.copy_list[index + 1])
+                    value += 1  # Increase the findings by one
+                    temp_dict.update({self.copy_list[index + 1]: value})
+        #  Get word frequency for closest words
+        max_value = 0
+        chance = []
+        for val in temp_dict.values():
+            if max_value < val:
+                max_value = val
+        for key in temp_dict.keys():
+            value = temp_dict.get(key)
+            if max_value == value:
+                chance.append(key)  # Append word with the maximum value
+        if len(chance) == 1:
+            return chance[0]
+        elif len(chance) > 1:
+            return chance[random.randint(0, len(chance)-1)]
+        else:
+            return self.copy_list[random.randint(0, len(self.copy_list)-1)]
+    # TODO: Randomly choose a word based on its frequency in this histogram
 
-        # TODO: Randomly choose a word based on its frequency in this histogram
+
 def print_histogram(word_list):
     print()
     print('Histogram:')
@@ -66,13 +94,13 @@ def print_histogram(word_list):
         freq = histogram.frequency(word)
         print('{!r} occurs {} times'.format(word, freq))
     print()
-    print_histogram_samples(histogram)
+    #  print_histogram_samples(histogram)
 
 
 def print_histogram_samples(histogram):
     print('Histogram samples:')
     # Sample the histogram 10,000 times and count frequency of results
-    samples_list = [histogram.sample() for _ in range(10000)]  #change the range back to 10000
+    samples_list = [histogram.sample() for _ in range(10000)]  # change the range back to 10000
     samples_hist = Dictogram(samples_list)
     print('samples: {}'.format(samples_hist))
     print()
@@ -110,18 +138,23 @@ def main():
     arguments = sys.argv[1:]  # Exclude script name in first argument
     if len(arguments) >= 1:
         # Test histogram on given arguments
-        print_histogram(arguments)
+        #  print_histogram(arguments)
+        histogram = Dictogram(text)
+        chosen_word = histogram.sample()  # Pick a random word based on percentage
+        chain = [chosen_word]
+        for _ in range(20):
+            chosen_word = histogram.mokov_chain(chosen_word)
+            histogram.mokov_chain(chosen_word)
+            chain.append(chosen_word)
+        print(chain)
     else:
-        # Test histogram on letters in a word
-        word = 'abracadabra'
-        print_histogram(list(word))
-        # Test histogram on words in a classic book title
-        fish_text = 'one fish two fish red fish blue fish'
-        print_histogram(fish_text.split())
-        # Test histogram on words in a long repetitive sentence
-        woodchuck_text = ('how much wood would a wood chuck chuck'
-                          ' if a wood chuck could chuck wood')
-        print_histogram(woodchuck_text.split())
+        histogram = Dictogram(getText().split())
+        chosen_word =  "rat-faced"  #  histogram.sample()  # Pick a random word based on percentage
+        chain = [chosen_word]
+        for _ in range(10):
+            chosen_word = histogram.mokov_chain(chosen_word)
+            chain.append(chosen_word)
+        print(chain)
 
 
 if __name__ == '__main__':

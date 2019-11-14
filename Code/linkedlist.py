@@ -56,10 +56,25 @@ class LinkedList(object):
         """Return the length of this linked list by traversing its nodes.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
+        count = 0
+        first = self.head
+        while(first):
+            count += 1
+            first = first.next
+        return count
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
+        new_node = Node(item)
+        if self.tail is not None:
+            self.tail.next = new_node
+            self.tail = new_node
+            return
+        else:
+            self.head = new_node
+            self.tail = new_node
+            return
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
 
@@ -67,6 +82,15 @@ class LinkedList(object):
         """Insert the given item at the head of this linked list.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Create new node to hold given item
+        new_node = Node(item)
+        if self.head is not None:
+            new_node.next = self.head  # Have the previous head node be saved in the new node
+            self.head = new_node  # Now assing the head node to the new node
+            return       #  ['B'] next [A]->[B]
+            ]
+        else:
+            self.head = new_node
+            self.tail = new_node
         # TODO: Prepend node before head, if it exists
 
     def find(self, quality):
@@ -75,15 +99,48 @@ class LinkedList(object):
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find item where quality(item) is True
         # TODO: Check if node's data satisfies given quality function
+        start = self.head
+        while(start):
+            if quality(start.data):
+                return start.data
+            start = start.next
+        return None
 
     def delete(self, item):
+
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find one whose data matches given item
-        # TODO: Update previous node to skip around node with matching data
-        # TODO: Otherwise raise error to tell user that delete has failed
-        # Hint: raise ValueError('Item not found: {}'.format(item))
+         #TODO: Update previous node to skip around node with matching data
+         #TODO: Otherwise raise error to tell user that delete has failed
+         #Hint: raise ValueError('Item not found: {}'.format(item))
+         #Store head nod
+        if self.head is not None:
+            node = self.head
+        else:
+            raise ValueError('Item not found: {}'.format(item))
+        last_node = None
+        while True:
+            if node.data == item:
+                if node == self.head and node == self.tail:
+                    self.head = None
+                    self.tail = None
+                elif node == self.head:
+                    if node.next is not None:
+                        self.head = node.next
+                    else:
+                        self.head = None
+                elif node == self.tail:
+                    last_node.next = None
+                    self.tail = last_node
+                else:
+                    last_node.next = node.next
+                break
+            elif node.next is None:
+                raise ValueError('Item not found: {}'.format(item))
+            last_node = node
+            node = node.next
 
 
 def test_linked_list():
@@ -101,7 +158,7 @@ def test_linked_list():
     print('length: {}'.format(ll.length()))
 
     # Enable this after implementing delete method
-    delete_implemented = False
+    delete_implemented = True
     if delete_implemented:
         print('\nTesting delete:')
         for item in ['B', 'C', 'A']:

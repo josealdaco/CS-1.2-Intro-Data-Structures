@@ -191,6 +191,13 @@ class LinkedListTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             ll.delete('X')  # Item not found in list
 
+    def test_delete_empty_list(self):
+        ll = LinkedList(['A', 'B', 'C'])
+        for item in ['A', 'B', 'C']:
+            ll.delete(item)
+        with self.assertRaises(ValueError):
+            ll.delete('C')
+
 
 if __name__ == '__main__':
     unittest.main()

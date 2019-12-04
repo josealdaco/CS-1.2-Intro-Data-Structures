@@ -37,6 +37,7 @@ class HashTable(object):
     def values(self):
         """Return a list of all values in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
+        #  Running Time is O(b * L) OR O(n)
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
         value_list = []
@@ -49,6 +50,7 @@ class HashTable(object):
         """Return a list of all items (key-value pairs) in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
         # Collect all pairs of key-value entries in each bucket
+        #  Running Time is O(b)
         all_items = []
         for bucket in self.buckets:
             all_items.extend(bucket.items())
@@ -58,6 +60,7 @@ class HashTable(object):
         """Return the number of key-value entries by traversing its buckets.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all buckets
+        #  Running Time is O(1)
         return len(self.items())
         # TODO: Count number of key-value entries in each bucket
 
@@ -75,6 +78,8 @@ class HashTable(object):
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
+        #  Running Time is O(n) or O(b * l)
+
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, return value associated with given key
@@ -93,6 +98,7 @@ class HashTable(object):
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
+        #  Running Time is O(n) or O(b * l)
         for bucket in self.buckets:
             for node in bucket.items():
                 if key in node:
@@ -105,6 +111,7 @@ class HashTable(object):
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
+        #  Running Time is O(n) or O(b * l)
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, delete entry associated with given key

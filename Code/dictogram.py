@@ -81,6 +81,35 @@ class Dictogram(dict):
             return self.copy_list[random.randint(0, len(self.copy_list)-1)]
     # TODO: Randomly choose a word based on its frequency in this histogram
 
+    def markov_chain_v2(self, chosen_word):
+        """ Creating a mokup of the histogram 2nd state """
+        temp_dict = {}
+        for index in range(len(self.copy_list)):
+            if self.copy_list[index].lower() == chosen_word.lower() and index < len(self.copy_list)-1:
+                if self.copy_list[index + 1] not in temp_dict:
+                    temp_dict.update({self.copy_list[index + 1]: 1})
+                else:
+                    value = temp_dict.get(self.copy_list[index + 1])
+                    value += 1  # Increase the findings by one
+                    temp_dict.update({self.copy_list[index + 1]: value})
+        #  Get word frequency for closest words
+        max_value = 0
+        chance = []
+        for val in temp_dict.values():
+            if max_value < val:
+                max_value = val
+        for key in temp_dict.keys():
+            value = temp_dict.get(key)
+            if max_value == value:
+                chance.append(key)  # Append word with the maximum value
+        if len(chance) == 1:
+            return chance[0]
+        elif len(chance) > 1:
+            return chance[random.randint(0, len(chance)-1)]
+        else:
+            return self.copy_list[random.randint(0, len(self.copy_list)-1)]
+    # TODO: Randomly choose a word based on its frequency in this histogram
+
 
 def print_histogram(word_list):
     print()

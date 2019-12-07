@@ -15,6 +15,16 @@ def sample(dict):
         result -= dict[word]
 
 
+def nestedList(value, list):
+    """ Finds index of nested list"""
+    index = 0
+    for items in list:
+        if items[0] == value:
+            return index
+        index += 1
+    return None
+
+
 def sample_v2(chain, chainList):
     """Return a word from this histogram, randomly sampled by weighting
     each word's probability of being chosen by its observed frequency."""
@@ -79,12 +89,24 @@ def markov_Dict(size, corpus):
             secondDictValue = secondDict.get(keyString)
             value += 1
             stateDict.update({keyString: value})
-            if listToString(keyState) not in secondDictValue:
-                secondDict.update({listToString(keyState): secondDictValue.append(listToString(keyState))})
+
+            if secondDictValue is not None:
+                print("addding new keyState", keyState, keyString, "secondDictValue", secondDictValue)
+                secondDictValue.append([listToString(keyState), 1])
+                secondDict.update({keyString: secondDictValue})
+                print(secondDict.get(keyString))
+            else:
+                if secondDictValue is not None:
+                    valueIndex = nestedList(listToString(keyState), secondDictValue)
+                    print("Version 1:", secondDictValue[valueIndex], secondDictValue[valueIndex][1])
+                    secondDictValue[valueIndex][1] += 1
+                    print("Version 2:", secondDictValue[valueIndex][1])
+                    secondDict.update({listToString(keyState): secondDictValue})
         elif keyString not in stateDict and len(keyString.split()) == size:
             stateDict.update({keyString: 1})
             if len(keyState) == size:
-                secondDict.update({keyString: [listToString(keyState)]})
+                print("this is the keyString:", keyString, listToString(keyState))
+                secondDict.update({keyString: [[listToString(keyState), 1]]})
     result.append(stateDict)
     result.append(secondDict)
     return result  # Sample the states
@@ -95,8 +117,9 @@ def lastIndex(list):
 
 
 def createSentence(wordAmount, corpus):
-    result = markov_Dict(3, corpus)
+    result = markov_Dict(1, corpus)
     start = sample(result[0])
+    print(result[1])
     print(start + " ", end='')
     for time in range(wordAmount):
         #  previous = [] This will be used later on so the previous statements have not  been said
@@ -110,4 +133,4 @@ def createSentence(wordAmount, corpus):
 
 
 if __name__ == "__main__":
-    result = createSentence(10, "I like dogs but I enjoy cats more because they don't bite. I also like turtle because they don't torture me")
+    result = createSentence(4, "I am I like I like I know am nothing like  nothing more like like")

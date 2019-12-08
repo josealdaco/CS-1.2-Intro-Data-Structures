@@ -22,7 +22,7 @@ def nestedList(value, list):
         for items in list:
             if items[0] == value:
                 return index
-                index += 1
+            index += 1
         return None
     except TypeError:
         return None
@@ -120,7 +120,7 @@ def lastIndex(list):
 
 
 def createSentence(wordAmount, corpus):
-    result = markov_Dict(10, corpus)
+    result = markov_Dict(7, corpus)
     start = sample(result[0])
     print(start + " ", end='')
     for time in range(wordAmount):

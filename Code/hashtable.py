@@ -24,39 +24,48 @@ class HashTable(object):
         # Calculate the given key's hash code and transform into bucket index
         return hash(key) % len(self.buckets)
 
+    def unWrapList(self, list, key):
+        """ Unwraps List of List to a single List"""
+        finalList = []
+        for item in list:
+            for value in item:
+                finalList.append(value[key])
+        return finalList
+
     def keys(self):
         """Return a list of all keys in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
-        #  Running Time is O(n) or O(b * l)
-        #  Best Running Time: O(b)
+        #  Running Time is O(n)
+        #  Best Running Time: O(n)
         #  Worst Running Time: O(n)
         # Collect all keys in each bucket
         all_keys = []
+        print()
         for bucket in self.buckets:
-            for key, value in bucket.items():
-                all_keys.append(key)
+            all_keys.append(bucket.items())  # Get all items of the LinkedList
+        all_keys = self.unWrapList(all_keys, 0)  # 0 is key, 1 is value
         return all_keys
 
     def values(self):
         """Return a list of all values in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
         #  Running Time is O(b * L) OR O(n)
-        #  Best Running Time: O(b)
+        #  Best Running Time: O(n)
         #  Worst Running Time: O(n)
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
-        value_list = []
+        all_keys = []
         for bucket in self.buckets:
-            for key, value in bucket.items():  # # OPTIMIZE: bucket.items().values()
-                value_list.append(value)
-        return value_list
+            all_keys.append(bucket.items())  # Get all items of the LinkedList
+        all_keys = self.unWrapList(all_keys, 1)  #  0 is key, 1 is value
+        return all_keys
 
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
         # Collect all pairs of key-value entries in each bucket
-        #  Running Time is O(b)
-        #  Best Running Time: O(1)
+        #  Running Time is O(n)
+        #  Best Running Time: O(n)
         #  Worst Running Time: O(n)
         all_items = []
         for bucket in self.buckets:
@@ -67,10 +76,13 @@ class HashTable(object):
         """Return the number of key-value entries by traversing its buckets.
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all buckets
-        #  Running Time is O(1)
-        #  Best Running Time: O(1)
-        #  Worst Running Time: O(1)
-        return len(self.items())
+        #  Running Time is O(b)
+        #  Best Running Time: O(b)
+        #  Worst Running Time: O(b)
+        sum = 0
+        for item in self.buckets:
+            sum += item.count
+        return sum
         # TODO: Count number of key-value entries in each bucket
 
     def contains(self, key):
@@ -78,13 +90,16 @@ class HashTable(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
-        #  Running Time is O(n)
-        #  Best Running Time: O(b)
+        #  Running Time is O(1)
+        #  Best Running Time: O(l)
         #  Worst Running Time: O(n)
-        for bucket in self.buckets:
-            for keys, values in bucket.items():
-                if keys == key:
-                    return True
+
+        index = self._bucket_index(key)
+
+        list = self.buckets[index].items()
+        for item in list:
+            if item[0] == key:
+                return True
         return False
 
     def get(self, key):
@@ -98,10 +113,11 @@ class HashTable(object):
         # TODO: If found, return value associated with given key
         # TODO: Otherwise, raise error to tell user get failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
-        for bucket in self.buckets:
-            for keys, value in bucket.items():
-                if keys == key:
-                    return value
+        index = self._bucket_index(key)  #  Get index
+
+        for item in self.buckets[index].items():  # Loop over items in linkedList
+            if item[0] == key:
+                return item[1]
         raise KeyError('Key not found:{}'.format(key))
 
     def set(self, key, value):
@@ -111,16 +127,17 @@ class HashTable(object):
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
-        #  Running Time is O(n) or O(b * l)
-        #  Best Running Time: O(b)
+        #  Running Time is O(l)
+        #  Best Running Time: O(1)
         #  Worst Running Time: O(n)
-        for bucket in self.buckets:
-            for node in bucket.items():
-                if key in node:
-                    bucket.delete(node)
-                    bucket.prepend((key, value))
-                    return
         index = self._bucket_index(key)
+        print("Linked List before set", self.buckets[index].items())
+        for node in self.buckets[index].items():
+            if key == node[0]:
+                print("This is the node:", node)
+                self.buckets[index].delete(node)
+                self.buckets[index].append((key, value))
+                return
         return self.buckets[index].append((key, value))
 
     def delete(self, key):
@@ -134,13 +151,12 @@ class HashTable(object):
         # TODO: If found, delete entry associated with given key
         # TODO: Otherwise, raise error to tell user delete failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
-        for bucket in self.buckets:
-            for node in bucket.items():
-                if key in node:
-                    bucket.delete(node)
-                    return
-        raise KeyError('key not found:{}'.format(key))
-        return
+        index = self._bucket_index(key)
+        try:
+            data = self.buckets[index].find(lambda item: item == (key, self.get(key)))
+            self.buckets[index].delete(data)
+        except ValueError:
+            raise KeyError('key not found:{}'.format(key))
 
 
 def test_hash_table():

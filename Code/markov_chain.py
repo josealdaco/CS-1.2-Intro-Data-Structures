@@ -131,8 +131,5 @@ def createSentence(wordAmount, corpus):
             start = sample(result[0])
 
 
-    #  markov_chain_v2(localCorpus[])
-
-
 if __name__ == "__main__":
     result = createSentence(4, "I like nothing more then to simply hug you. You have been very good to me and I will never forget that, Really appreciate you.")

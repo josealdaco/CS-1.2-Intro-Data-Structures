@@ -43,7 +43,7 @@ class LinkedList(object):
         # Start at head node
         node = self.head  # O(1) time to assign new variable
         # Loop until node is None, which is one node too far past tail
-        while node is not None:  # Always n iterations because no early return
+        while node:  # Always n iterations because no early return
             items.append(node.data)  # O(1) time (on average) to append to list
             # Skip to next node to advance forward in linked list
             node = node.next  # O(1) time to reassign variable
@@ -112,7 +112,6 @@ class LinkedList(object):
         # Running Time is O(n) for worst case, Best is O(1) if first node found is a match
 
     def delete(self, item):
-
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""

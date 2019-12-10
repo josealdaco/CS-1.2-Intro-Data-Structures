@@ -94,6 +94,7 @@ class HashTableTest(unittest.TestCase):
         ht.set('I', 1)
         ht.set('V', 5)
         ht.set('X', 10)
+        print("This is the hash table:", ht.items())
         assert ht.length() == 3
         ht.delete('I')
         ht.delete('X')
@@ -102,7 +103,6 @@ class HashTableTest(unittest.TestCase):
             ht.delete('X')  # Key no longer exists
         with self.assertRaises(KeyError):
             ht.delete('A')  # Key does not exist
-
 
 if __name__ == '__main__':
     unittest.main()

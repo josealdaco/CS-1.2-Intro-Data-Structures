@@ -25,7 +25,7 @@ SECRET_KEY = 'xylr-*-c0r1-41ql7g-6ec2-c4r^5o%99o0$b2e6$1*0gpz$4$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['histogramwebsite.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['histogramwebsite.herokuapp.com', 'localhost']
 
 
 # Application definition

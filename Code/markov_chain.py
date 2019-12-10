@@ -132,4 +132,4 @@ def createSentence(wordAmount, corpus):
 
 
 if __name__ == "__main__":
-    result = createSentence(4, "I like nothing more then to simply hug you. You have been very good to me and I will never forget that, Really appreciate you.")
+    result = createSentence(4, """I like nothing more then to simply hug you. You have been very good to me and I will never forget that, Really appreciate you.""")

@@ -48,6 +48,5 @@ class HashTableExtensionTest(HashTableTest):  #  All tests from previous must Pa
         ht.delete('Nothing')
         self.assertEqual(ht.length(), 1)  # Length after deletion
 
-        
 if __name__ == '__main__':
     unittest.main()
